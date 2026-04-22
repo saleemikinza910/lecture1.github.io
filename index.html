@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinza Saleemi · my complete story</title>
+  <style>
+    /* ---------- refined color palette ---------- 
+       base beige      : #f5f0e1  (background)
+       primary accent  : #b58b6f  (warm terracotta)
+       secondary       : #a7b59a  (soft sage)
+       light accent    : #e3c9a0  (sand)
+       deep neutral    : #5e4b3c  (brownish)
+       card background : #fefaf2  (off-white with warmth)
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f0e1;        /* warm beige base */
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #3f332a;
+      padding: 2rem 1rem;
+    }
+
+    .main-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fefaf2;              /* soft off-white */
+      border-radius: 3rem 3rem 2rem 2rem;
+      box-shadow: 0 25px 45px -15px rgba(140, 100, 70, 0.3);
+      padding: 2.5rem 2.8rem;
+      border: 2px solid #e8d9c4;
+    }
+
+    /* header */
+    header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+      font-weight: 600;
+      color: #5e4b3c;
+      letter-spacing: -0.5px;
+      background: linear-gradient(145deg, #f5e8d4, #fff1df);
+      display: inline-block;
+      padding: 0.3rem 2.8rem;
+      border-radius: 60px 20px 60px 20px;
+      box-shadow: 0 8px 0 #b58b6f;        /* terracotta shadow */
+      margin-bottom: 0.5rem;
+      border: 2px solid #e3c9a0;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      background: #e3c9a0;                /* sand */
+      color: #4a3729;
+      padding: 0.4rem 2rem;
+      border-radius: 40px;
+      display: inline-block;
+      font-weight: 400;
+      border: 1px dashed #b58b6f;
+    }
+
+    /* navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: #f5e8d4;
+      color: #4a3a2c;
+      padding: 0.5rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+      border: 2px solid #e3c9a0;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: #b58b6f;
+      border-color: #7c6048;
+      color: white;
+    }
+
+    /* main sections */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section {
+      background: #fffaf2;
+      border-radius: 2.5rem 1rem 2.5rem 1rem;
+      padding: 2rem 2.5rem;
+      border: 2px solid #e8d9c4;
+      box-shadow: 8px 8px 0 #dac09f;
+    }
+
+    /* alternating border radius & accent */
+    section:nth-of-type(even) {
+      background: #fef7ea;
+      border-radius: 1rem 2.5rem 1rem 2.5rem;
+      border-color: #d7bc97;
+      box-shadow: 8px 8px 0 #b58b6f;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      border-left: 12px solid #b58b6f;    /* primary accent */
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: #5e4b3c;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: "✦";
+      font-size: 2rem;
+      color: #a7b59a;                      /* sage */
+    }
+
+    /* article cards */
+    .interest-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.8rem;
+    }
+
+    article {
+      flex: 1 1 240px;
+      background: #fffcf5;
+      border-radius: 2rem 0.5rem 2rem 0.5rem;
+      padding: 1.8rem 1.5rem;
+      border: 2px solid #e3c9a0;
+      box-shadow: 5px 5px 0 #b58b6f;
+      transition: 0.2s;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+      background: #fff9ed;
+      border-color: #a7b59a;
+      box-shadow: 8px 8px 0 #a7b59a;
+    }
+
+    article h3 {
+      font-size: 1.7rem;
+      color: #6b4f3a;
+      margin-bottom: 0.8rem;
+      border-bottom: 3px dotted #b58b6f;
+      display: inline-block;
+    }
+
+    /* lists */
+    ul, ol {
+      margin: 0.8rem 0 0 1.2rem;
+      background: #faf0e1;
+      padding: 0.8rem 1.5rem 0.8rem 2.2rem;
+      border-radius: 30px 8px 30px 8px;
+      border: 2px solid #dcc29e;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    li::marker {
+      color: #b58b6f;
+    }
+
+    /* blockquote */
+    blockquote {
+      background: #f2e4d2;
+      padding: 1.8rem 2.2rem;
+      border-radius: 60px 10px 60px 10px;
+      font-size: 1.2rem;
+      border-left: 12px solid #a7b59a;    /* sage accent */
+      margin: 1.8rem 0;
+      color: #3f332a;
+      font-style: italic;
+      box-shadow: inset 0 0 0 2px #f5e8d4;
+    }
+
+    figcaption {
+      text-align: right;
+      font-weight: 600;
+      color: #6b4f3a;
+    }
+
+    /* inline highlights */
+    strong {
+      color: #8b5a3c;
+      background: #faebd2;
+      padding: 0.1rem 0.3rem;
+      border-radius: 12px;
+    }
+
+    em {
+      background: #e3d3ba;
+      padding: 0.1rem 0.4rem;
+      border-radius: 8px;
+    }
+
+    mark {
+      background: #f2debc;
+      color: #3f2d1d;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      border: 1px solid #b58b6f;
+    }
+
+    time {
+      background: #a7b59a;                /* sage */
+      color: #2d2a1e;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* footer */
+    footer {
+      margin-top: 3.5rem;
+      background: #e8d9c4;
+      border-radius: 40px 40px 20px 20px;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      border: 3px solid #e3c9a0;
+      color: #4a3b2c;
+    }
+
+    footer p {
+      margin: 0.7rem 0;
+    }
+
+    address {
+      background: #f5e8d4;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      font-style: normal;
+      border: 2px solid #b58b6f;
+      display: inline-block;
+      margin: 1rem 0;
+    }
+
+    hr {
+      border: 2px solid #e3c9a0;
+      margin: 1.5rem 0;
+    }
+
+    /* extra personal detail sections */
+    .personal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .personal-card {
+      background: #fcf3e4;
+      border-radius: 2rem;
+      padding: 1.5rem;
+      border: 2px solid #b58b6f;
+      box-shadow: 5px 5px 0 #a7b59a;
+    }
+
+    .personal-card h3 {
+      color: #5e4b3c;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-left: 8px solid #a7b59a;
+      padding-left: 1rem;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .main-card { padding: 1.5rem; }
+      h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-card">
+    <header>
+      <h1>Kinza Saleemi</h1>
+      <p class="tagline">📖 novel lover · developer in the making · urdu & english reader</p>
+      <nav>
+        <a href="#story">my story</a>
+        <a href="#novels">novels</a>
+        <a href="#series">series</a>
+        <a href="#goal">goal</a>
+        <a href="#more">more about me</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- original story section -->
+      <section id="story">
+        <h2>my story · who i am</h2>
+        <p>
+          I'm <strong>Kinza Saleemi</strong>, a university student who finds magic in stories — whether they're in <em>English</em>, <em>Urdu</em>, or lines of code. 
+          I believe every novel teaches you something about life, and every bug teaches you patience. 
+        </p>
+        <p>
+          <mark>I read voraciously</mark> — from classic Urdu afsaane to contemporary English fiction. Currently juggling data structures and a stack of unread books.
+        </p>
+        <blockquote>
+          <p>“A room without books is like a body without a soul — and a developer without stories builds empty code.”</p>
+          <figcaption>— me, <cite>inspired by Cicero</cite></figcaption>
+        </blockquote>
+      </section>
+
+      <!-- novels section (english + urdu) already there, but we enhance with more personal likes -->
+      <section id="novels">
+        <h2>📚 novels i love (english & urdu)</h2>
+        <div class="interest-grid">
+          <article>
+            <h3>🇬🇧 english favourites</h3>
+            <ul>
+              <li><strong>Pride and Prejudice</strong> – Jane Austen (sparks joy)</li>
+              <li><strong>To Kill a Mockingbird</strong> – Harper Lee (<em>empathy</em>)</li>
+              <li><strong>1984</strong> – George Orwell (scary relevant)</li>
+              <li><strong>The Namesake</strong> – Jhumpa Lahiri (identity)</li>
+            </ul>
+            <p><small>currently: <cite>The Vanishing Half</cite> by Brit Bennett</small></p>
+          </article>
+          <article>
+            <h3>🇵🇰 اردو ناول</h3>
+            <ul>
+              <li><strong>راجہ گدھ</strong> – مستنصر حسین تارڑ</li>
+              <li><strong>پہاڑ اور پتھر</strong> – الطاف فاطمہ</li>
+              <li><strong>آگ کا دریا</strong> – قرۃ العین حیدر</li>
+              <li><strong>بستی</strong> – انتظار حسین</li>
+            </ul>
+            <p><small>اب پڑھ رہی ہوں: <cite>کاروانِ زندگی</cite> – حمیرا رحمان</small></p>
+          </article>
+        </div>
+      </section>
+
+      <!-- series i watch -->
+      <section id="series">
+        <h2>📺 series i watch (and rewatch)</h2>
+        <article style="background: transparent; box-shadow: none; padding: 0;">
+          <ul style="background: #f4e6d3;">
+            <li><strong>Game of Thrones</strong> – complex characters, dragons 🐉</li>
+            <li><strong>Kota Factory</strong> – relatable student life</li>
+            <li><strong>Sherlock</strong> – brilliant dialogues</li>
+            <li><strong>سرِ مقتل</strong> – intense Urdu drama</li>
+            <li><strong>The Queen’s Gambit</strong> – ambition & chess</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- university & software engineer goal -->
+      <section id="goal">
+        <h2>🎓 university & my big goal</h2>
+        <p>
+          I'm a <strong>Computer Science</strong> student, learning to build things that matter. 
+          My dream: become a <mark>skilled software engineer</mark> who creates inclusive, story‑driven applications — 
+          maybe a platform to discover Urdu and English books, or a tool for aspiring writers.
+        </p>
+        <blockquote style="background: #e8d9c4;">
+          “First, solve the problem. Then, write the code. But never forget the user’s story.”
+        </blockquote>
+        <p>I practice full‑stack development, contribute to open source, and never stop learning.</p>
+      </section>
+
+      <!-- +++ NEW SECTION: more things I like about myself +++ -->
+      <section id="more">
+        <h2>🌟 more about me · my strengths & passions</h2>
+        <div class="personal-grid">
+          <div class="personal-card">
+            <h3>💪 strengths</h3>
+            <ul style="background: transparent; border: none; padding-left: 1.2rem;">
+              <li><strong>Curious</strong> – I ask "why" until I understand.</li>
+              <li><strong>Empathetic</strong> – stories taught me to see many sides.</li>
+              <li><strong>Disciplined</strong> – I balance studies, reading, and coding.</li>
+              <li><strong>Creative</strong> – I love weaving ideas into projects.</li>
+            </ul>
+          </div>
+          <div class="personal-card">
+            <h3>🎯 hobbies & interests</h3>
+            <ul style="background: transparent; border: none;">
+              <li>✍️ <em>Writing short stories</em> (in Urdu & English)</li>
+              <li>🧩 Solving puzzles & brain teasers</li>
+              <li>🌿 Exploring nature & photography</li>
+              <li>🎶 Listening to soulful music (old Urdu ghazals & indie)</li>
+            </ul>
+          </div>
+          <div class="personal-card">
+            <h3>🏆 small achievements</h3>
+            <ul style="background: transparent; border: none;">
+              <li>📝 Published a short story in uni magazine</li>
+              <li>💻 Completed 5+ web development projects</li>
+              <li>📚 Read 30+ books in one year (2024)</li>
+              <li>🤝 Volunteer coding tutor for beginners</li>
+            </ul>
+          </div>
+          <div class="personal-card">
+            <h3>📖 languages i read</h3>
+            <ul style="background: transparent; border: none;">
+              <li><strong>Urdu</strong> – native, love reading prose & poetry</li>
+              <li><strong>English</strong> – fluent, mostly fiction & tech</li>
+              <li><strong>Punjabi</strong> – conversational, enjoy folk tales</li>
+              <li><strong>Arabic</strong> – learning to read the Quran</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; text-align: center;">
+          <mark>I'm a mix of tradition and technology, words and code.</mark>
+        </p>
+      </section>
+
+      <!-- aside: fun fact -->
+      <aside style="background: #f2e4d2; padding: 1.5rem 2.2rem; border-radius: 30px; border-left: 12px solid #a7b59a;">
+        <h3 style="color: #5e4b3c;">📌 fun fact corner</h3>
+        <p>
+          I once tried to write a novel in both Urdu and English simultaneously — got 50 pages in! 
+          Also, I name my variables after my favourite book characters. 
+          <br><em>#elizabethBennet变量</em>
+        </p>
+      </aside>
+
+      <!-- address / contact -->
+      <address>
+        📍 Lahore, Pakistan · 📧 kinza.saleemi@example.edu<br>
+        <small>always up for book chats or coding collabs</small>
+      </address>
+    </main>
+
+    <footer>
+      <p>
+        <strong>Kinza Saleemi</strong> — <em>novel‑loving future software engineer</em><br>
+        <time datetime="2025-03">march 2025</time> · perfect beige & terracotta palette
+      </p>
+      <p>
+        <small>“code with story, design with warmth”</small>
+      </p>
+      <hr style="width: 60%; margin: 1rem auto;">
+      <p>
+        📖 اردو پڑھیں · 📘 ENGLISH READ · 💻 DREAM IN CODE
+      </p>
+      <p>
+        <span style="background-color: #b58b6f; color: white; padding: 0.2rem 1rem; border-radius: 30px;">✨ this is me, wholly ✨</span>
+      </p>
+    </footer>
+  </div>
+</body>
+</html> 
